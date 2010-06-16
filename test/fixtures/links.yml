@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  long_url: http://www.google.fr
+  token: goo
+  short_url: http://0.0.0.0:3000/goo
+  ip_address: 127.0.0.1
+  domain_id: 1
+
+two:
+  id: 2
+  long_url: http://www.yahoo.fr
+  token: ya
+  short_url: http://0.0.0.0:3000/ya
+  ip_address: 127.0.0.1
+  domain_id: 1
+
+three:
+  id: 3
+  long_url: http://www.yahoo.fr
+  token: hoo
+  short_url: http://other.net/hoo
+  ip_address: 127.0.0.1
+  domain_id: 2

@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: 0.0.0.0:3000
+  is_default: true
+
+two:
+  id: 2
+  name: other.net
+  is_default: false
+
+three:
+  id: 3
+  name: last.org
+  is_default: false

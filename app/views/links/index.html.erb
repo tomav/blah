@@ -1,0 +1,28 @@
+<h1>Listing links</h1>
+
+<table>
+  <tr>
+    <th>Long url</th>
+    <th>Token</th>
+    <th>Short url</th>
+    <th>Ip address</th>
+    <th>Domain</th>
+  </tr>
+
+<% @links.each do |link| %>
+  <tr>
+    <td><%=h link.long_url %></td>
+    <td><%=h link.token %></td>
+    <td><%=h link.short_url %></td>
+    <td><%=h link.ip_address %></td>
+    <td><%=h link.domain_id %></td>
+    <td><%= link_to 'Show', link %></td>
+    <td><%= link_to 'Edit', edit_link_path(link) %></td>
+    <td><%= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New link', new_link_path %>

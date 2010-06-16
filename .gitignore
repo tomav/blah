@@ -1,0 +1,10 @@
+log/*.log
+tmp/**/*
+coverage/**
+.DS_Store
+doc/api
+doc/app
+config/database.yml
+db/*.sqlite3
+db/schema.rb
+vendor/plugin/boxcar-conductor

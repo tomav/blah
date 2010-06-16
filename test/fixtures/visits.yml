@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  link_id: 1
+  ip_address: 127.0.0.1
+  referer: 
+  browser: Mozilla/5.0 (Windows; U; Windows NT 5.1; fr-FR) AppleWebKit/525.13 (KHTML, like Gecko) Version/3.1 Safari/525.13
+
+two:
+  id: 2
+  link_id: 1
+  ip_address: 127.0.0.1
+  referer: http://www.bonjourmadame.fr
+  browser: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; fr; rv:1.9.0.3) Gecko/2008092414 Firefox/3.0.3

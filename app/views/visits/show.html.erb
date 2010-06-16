@@ -1,0 +1,23 @@
+<p>
+  <b>Link:</b>
+  <%=h @visit.link_id %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%=h @visit.ip_address %>
+</p>
+
+<p>
+  <b>Referer:</b>
+  <%=h @visit.referer %>
+</p>
+
+<p>
+  <b>Browser:</b>
+  <%=h @visit.browser %>
+</p>
+
+
+<%= link_to 'Edit', edit_visit_path(@visit) %> |
+<%= link_to 'Back', visits_path %>

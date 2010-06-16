@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @domain.name %>
+</p>
+
+<p>
+  <b>Is default:</b>
+  <%=h @domain.is_default %>
+</p>
+
+
+<%= link_to 'Edit', edit_domain_path(@domain) %> |
+<%= link_to 'Back', domains_path %>
