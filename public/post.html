@@ -1,6 +1,8 @@
-<form action="/links" method="POST" accept-charset="utf-8">
-  <p><label for="domain_id">domain_id</label><input type="text" name="domain_id" value="" id="domain_id">
+<form action="/api/links.json" method="POST" accept-charset="utf-8" enctype="text/xml">
+  <p><label for="data">data</label>
+    <textarea name="data" rows="15" cols="50"></textarea>
   </p>
-  <p><label for="long_url">long_url</label><input type="text" name="long_url" value="" id="long_url"></p>
+  <label for="secret">secret</label><input type="text" name="secret" value="2kdjnaLI8" id="secret">
+  
   <p><input type="submit" name="Go" value="Go" id="Go"></p>
 </form>

@@ -1,4 +1,7 @@
 class LinksController < ApplicationController
+  
+  protect_from_forgery :secret => '2kdjnaLI8', :only => [:update, :delete, :create]
+  
   # GET /links
   # GET /links.xml
   def index
@@ -18,6 +21,7 @@ class LinksController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @link }
+      format.json  { render :json => @link }
     end
   end
 

@@ -49,6 +49,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   
+  map.resources :links, :name_prefix => 'api_', :path_prefix => 'api', :controller => 'api/links'  
+  
   map.connect ':token', :controller => 'links', :action => 'redirect'
   
 end
