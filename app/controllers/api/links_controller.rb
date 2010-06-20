@@ -1,9 +1,14 @@
 class Api::LinksController < ApplicationController
   
+  # Requires basic http auth
+  # POST XML to http://foo:bar@0.0.0.0:3000/api/links.xml with text/xml content-type
+  # POST JSON to http://foo:bar@0.0.0.0:3000/api/links.json with application/json content-type
+  
   before_filter :authenticate
   protect_from_forgery :except => :create
   
   # POST /api/links.xml
+  # POST /api/links.json
   def create
     if params[:long_url].blank?    
       long_url = params[:link][:long_url]
@@ -17,6 +22,7 @@ class Api::LinksController < ApplicationController
     end
     @link = Link.find_or_create_by_long_url_and_domain_id( long_url, domain_id )
     @link.ip_address = request.remote_ip
+    @link.format = request.format.to_s
 
     respond_to do |format|
       if @link.save
