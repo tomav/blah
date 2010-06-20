@@ -1,9 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.resources :links do |link|
+    link.resources :domains
+  end
+
+
   map.resources :visits
-
   map.resources :links
-
   map.resources :domains
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
 

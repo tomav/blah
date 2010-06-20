@@ -8,11 +8,7 @@
   <%=h @link.short_url %>
 </p>
 
-<p>
-  <b>Domain:</b>
-  <%=h @link.domain_id %>
-</p>
-
+<p>Share on <a href="http://www.facebook.com/sharer.php?u=<%=h @link.short_url %>" target="_blank">Facebook</a> or <a href="http://twitter.com/home?status=<%=h @link.short_url %>" target="_blank">Twitter</a></p>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>

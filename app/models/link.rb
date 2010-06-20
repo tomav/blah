@@ -1,6 +1,7 @@
 class Link < ActiveRecord::Base
   
   has_many :visits
+  belongs_to :domain
   
   validates_presence_of :long_url, :on => :create, :message => "can't be blank"
   validates_presence_of :domain_id, :on => :create, :message => "can't be blank"
