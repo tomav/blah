@@ -30,7 +30,7 @@ class Api::LinksController < ApplicationController
         format.json  { render :json => @link.to_json(:only => [ :long_url, :short_url ]), :status => :created, :location => @link }
       else
         format.xml  { render :xml => @link.errors, :status => :unprocessable_entity }
-        format.json  { render :json => @link, :status => :created, :location => @link }
+        format.json { render :json => @link.errors, :status => :unprocessable_entity }
       end
     end
   end
