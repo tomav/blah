@@ -1,7 +1,7 @@
 class Api::LinksController < ApplicationController
   
   # Requires basic http auth
-  # POST XML to http://foo:bar@0.0.0.0:3000/api/links.xml with text/xml content-type
+  # POST XML to http://foo:bar@0.0.0.0:3000/api/links.xml with application/xml content-type
   # POST JSON to http://foo:bar@0.0.0.0:3000/api/links.json with application/json content-type
   
   before_filter :authenticate
@@ -26,8 +26,8 @@ class Api::LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.xml  { render :xml => @link, :status => :created, :location => @link }
-        format.json  { render :json => @link, :status => :created, :location => @link }
+        format.xml  { render :xml => @link.to_xml(:only => [ :long_url, :short_url ]), :status => :created, :location => @link }
+        format.json  { render :json => @link.to_json(:only => [ :long_url, :short_url ]), :status => :created, :location => @link }
       else
         format.xml  { render :xml => @link.errors, :status => :unprocessable_entity }
         format.json  { render :json => @link, :status => :created, :location => @link }

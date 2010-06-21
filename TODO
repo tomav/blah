@@ -3,10 +3,9 @@ Add user model
 Link short_url created to their author
 
 == API
-Only return "long_url" and "short_url" in XML and JSON
 
 == User Interface
 Have a UI :-)
-Default form
-New short URL
+Default form to submit
+Created short URL
 Metrics
