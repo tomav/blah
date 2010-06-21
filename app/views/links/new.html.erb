@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :domain_id %><br />
-    <%= f.text_field :domain_id %>
+    <%= select :link, :domain_id, @domains.collect{|p| [p.name, p.id]}, {:include_blank => false } %>
   </p>
   <p>
     <%= f.submit 'Create' %>

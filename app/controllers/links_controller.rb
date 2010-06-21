@@ -29,6 +29,7 @@ class LinksController < ApplicationController
   # GET /links/new.xml
   def new
     @link = Link.new
+    @domains = Domain.all
 
     respond_to do |format|
       format.html # new.html.erb

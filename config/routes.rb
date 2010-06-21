@@ -1,7 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :links do |link|
-    link.resources :domains
+  map.resources :domains do |domain|
+    domain.resources :links do |link|
+      link.resources :visits
+    end
   end
 
 
