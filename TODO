@@ -1,11 +1,14 @@
-== Core
-Add user model
-Link short_url created to their author
+== Priority #1
+Work on token generator
+Store cookie with created token
+A real User Interface :-)
 
-== API
+== Priority #2
+Create account
+Authentification
 
-== User Interface
-Have a UI :-)
-Default form to submit
-Created short URL
-Metrics
+== Priority #3
+Yesterday most viewed
+Thumbnail generator for most viewed
+Most viewed URLs
+

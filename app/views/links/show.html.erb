@@ -5,7 +5,7 @@
 
 <p>
   <b>Short url:</b>
-  <%=h @link.short_url %>
+  <%= link_to(@link.short_url, @link.short_url) %>
 </p>
 
 <p>Share on <a href="http://www.facebook.com/sharer.php?u=<%=h @link.short_url %>" target="_blank">Facebook</a> or <a href="http://twitter.com/home?status=<%=h @link.short_url %>" target="_blank">Twitter</a></p>
