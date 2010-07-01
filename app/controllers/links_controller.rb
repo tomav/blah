@@ -1,5 +1,7 @@
 class LinksController < ApplicationController
   
+  before_filter :check_whitelist, :except => :redirect
+  
   # GET /links
   # GET /links.xml
   def index

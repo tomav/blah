@@ -7,10 +7,10 @@ one:
 
 two:
   id: 2
-  name: other.net
+  name: blah.fr
   is_default: false
 
 three:
   id: 3
-  name: last.org
+  name: kiw.is
   is_default: false

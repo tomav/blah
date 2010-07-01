@@ -20,6 +20,6 @@ three:
   id: 3
   long_url: http://www.yahoo.fr
   token: hoo
-  short_url: http://other.net/hoo
+  short_url: http://blah.fr/hoo
   ip_address: 127.0.0.1
   domain_id: 2

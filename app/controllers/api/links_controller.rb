@@ -5,6 +5,7 @@ class Api::LinksController < ApplicationController
   # POST JSON to http://foo:bar@0.0.0.0:3000/api/links.json with application/json content-type
   
   before_filter :authenticate
+  before_filter :check_whitelist
   protect_from_forgery :except => :create
   
   # POST /api/links.xml
