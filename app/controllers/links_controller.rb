@@ -11,8 +11,10 @@ class LinksController < ApplicationController
     @request_token = @consumer.get_request_token(
       :oauth_callback => 'http://0.0.0.0:3000/login/callback'
     )
+
     session[:request_token] = @request_token.token
     session[:request_secret] = @request_token.secret
+
     redirect_to @request_token.authorize_url
   end
   
@@ -22,14 +24,23 @@ class LinksController < ApplicationController
       OAUTH_TWITTER_SECRET,
       :site => 'http://twitter.com'
     )
-    request_token = OAuth::RequestToken.new(@consumer, session[:request_token], session[:request_token_secret])
-    access_token = request_token.get_access_token(
+
+    request_token = OAuth::RequestToken.new(
+      @consumer,
+      session[:request_token],
+      session[:request_token_secret]
+    )
+
+    access_token  = request_token.get_access_token(
       :oauth_verifier => params[:oauth_verifier]
-    )  
+    )
+
     if access_token 
       logger.debug { "Got an access_token !" }
-      body = access_token.get("/account/verify_credentials.json", { 'Accept'=>'application/json' }).body
-      logger.debug { body }
+
+      @user = JSON.parse(access_token.get("/account/verify_credentials.json", { 'Accept'=>'application/json' }).body)
+
+      logger.debug("Twitter Bird reply : #{@user.class}")
     end
 
   end
