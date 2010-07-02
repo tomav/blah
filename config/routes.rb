@@ -59,6 +59,10 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :links, :name_prefix => 'api_', :path_prefix => 'api', :controller => 'api/links'  
   
+  map.connect '/login/callback', :controller => 'links', :action => 'callback'
+  map.connect '/login', :controller => 'links', :action => 'login'
+
   map.connect ':token', :controller => 'links', :action => 'redirect'
+  
   
 end
