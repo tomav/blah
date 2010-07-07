@@ -1,5 +1,6 @@
 class Link < ActiveRecord::Base
   
+  belongs_to :user
   has_many :visits
   belongs_to :domain
   

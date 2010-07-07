@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :user_sessions
 
-  map.resources :domains do |domain|
-    domain.resources :links do |link|
+  map.resources :users do |user|
+    user.resources :links do |link|
       link.resources :visits
     end
   end
@@ -52,6 +53,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+
   map.connect '', :controller => 'links', :action => 'new'
 
   map.connect ':controller/:action/:id'
@@ -59,8 +61,14 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :links, :name_prefix => 'api_', :path_prefix => 'api', :controller => 'api/links'  
   
-  map.connect '/login/callback', :controller => 'links', :action => 'callback'
-  map.connect '/login', :controller => 'links', :action => 'login'
+  # Authlogic
+  map.login "login", :controller => "user_sessions", :action => "new"
+  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  map.my "my", :controller => "users", :action => "show"
+  
+  # oAuth
+  #map.connect '/login/callback', :controller => 'links', :action => 'callback'
+  #map.connect '/login', :controller => 'links', :action => 'login'
 
   map.connect ':token', :controller => 'links', :action => 'redirect'
   

@@ -17,8 +17,11 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 
 # Twitter oAuth parameters
-OAUTH_TWITTER_KEY           = "ytopIVv10emwV4PK3ROoKw"
-OAUTH_TWITTER_SECRET        = "MFq1Olzi2i9q9ni4grmLA2ZtIast3x9931T1XMsQ"
-OAUTH_TWITTER_REQUEST_TOKEN = "http://twitter.com/oauth/request_token"
-OAUTH_TWITTER_ACCESS_TOKEN  = "http://twitter.com/oauth/access_token"
-OAUTH_TWITTER_AUTHORIZE_URL = "http://twitter.com/oauth/authorize"
+OAUTH_TWITTER_KEY             = "ytopIVv10emwV4PK3ROoKw"
+OAUTH_TWITTER_SECRET          = "MFq1Olzi2i9q9ni4grmLA2ZtIast3x9931T1XMsQ"
+OAUTH_TWITTER_URL             = "http://twitter.com"
+
+# Facebook oAuth parameters
+OAUTH_FACEBOOK_KEY            = "126118037429328"
+OAUTH_FACEBOOK_SECRET         = "75d01b73f3b2a3f1aa5e43f12833d4b3"
+OAUTH_FACEBOOK_URL            = "https://graph.facebook.com"

@@ -1,6 +1,9 @@
-<h1>New link</h1>
+<% @page_title = "URL Shorter" %>
+<h1><%= @page_title %></h1>
 
-<p><a href="/login">Sign-in with Twitter</a></p>
+<h3>Welcome <%= link_to current_user.username, '/users/current/edit' %></h3>
+
+<p><%= link_to 'See all my links', links_path %></p>
 
 <% form_for(@link) do |f| %>
   <%= f.error_messages %>
