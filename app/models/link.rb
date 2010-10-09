@@ -9,7 +9,7 @@ class Link < ActiveRecord::Base
   validates_format_of :long_url, :with => /^(http|https):\/\/[a-z0-9]/ix, :on => :create, :message => "must begin with http:// or https://"
 
   #before_create :generate_token
-  after_create :generate_base62_token
+  after_create :generate_token
 
   def add_visit(request)
     visit = visits.build(:ip_address => request.remote_ip, :browser => request.env['HTTP_USER_AGENT'])
@@ -17,7 +17,7 @@ class Link < ActiveRecord::Base
     return visit
   end
   
-  def generate_base62_token
+  def generate_token
     token = id.to_i.to_s(36) 
     short_url = "http://" + Domain.find(domain_id).name + "/" + token
     update_attribute :token, token
