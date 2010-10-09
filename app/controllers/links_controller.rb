@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   
   before_filter :check_whitelist, :except => :redirect
-  before_filter :check_session
+  before_filter :check_session, :except => :redirect
   
   # GET /links
   # GET /links.xml
